@@ -4,7 +4,7 @@ Plugin Name: Recent Categories
 Plugin URI: http://zac.gorak.us
 Description: Recent Categories
 Author: @twodayslate
-Version: 1.2
+Version: 1.3
 Author URI: http://zac.gorak.us
 */
 
@@ -76,12 +76,10 @@ class Recent_Categories_Widget extends WP_Widget {
 		//if ( array_key_exists('before_widget', $args) ) echo $args['before_widget'];
 
 		if (array_key_exists('before_widget', $args)) {
-
                 echo str_replace('widget_recent_categories_widget', 'widget_recent_categories_widget widget_recent_entries', $args['before_widget']);
-        
         }
 		
-		$args = array(
+		$post_args = array(
 	    'numberposts' => $max_count,
 	    'offset' => 0,
 	    'orderby' => 'post_date',
@@ -90,9 +88,20 @@ class Recent_Categories_Widget extends WP_Widget {
 	    'post_status' => 'publish',
 	    'suppress_filters' => true );
 
-	    $recent_posts = get_posts( $args );
+	    $recent_posts = get_posts( $post_args );
 
-	    echo '<h2 class="widget-title">'.$title.'</h2>';
+		if ( array_key_exists('before_title', $args) ) {
+			echo $args['before_title'];
+		} else {
+			echo '<h2 class="widget-title">';
+		}
+	    echo $title;
+	    if ( array_key_exists('after_title', $args) ) {
+			echo $args['after_title'];
+		} else {
+			echo '</h2>';
+		}
+
 	    echo "<ul>";
 	    $listed_categories = array();
 	    foreach ($recent_posts as $apost) {
@@ -108,7 +117,7 @@ class Recent_Categories_Widget extends WP_Widget {
 		
 		foreach($listed_categories as $key => $value) {
 			echo '<li class="cat-item cat-item-'.$key.'">';
-			echo '<a href="'.get_category_link($key).'">';
+			echo '<a href="'.get_category_link($key).'" title="' . $value["name"]. '">';
 			if($display_icon) {
 				if (function_exists('the_icon')) {
 					echo the_icon(array('size' => 'small',
@@ -126,11 +135,9 @@ class Recent_Categories_Widget extends WP_Widget {
 		}
 		
 	    echo "</ul>";
-			
+
 		if ( array_key_exists('after_widget', $args) ) {
 			echo $args['after_widget'];
-		} else {
-			echo "</aside>";
 		}
 	}
 

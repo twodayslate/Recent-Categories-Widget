@@ -3,8 +3,8 @@ Contributors: twodayslate
 Donate link: http://zac.gorak.us
 Tags: categories, widget, sidebar
 Requires at least: 4.0
-Tested up to: 4.2
-Stable tag: 4.2
+Tested up to: 5.0.3
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ You can set the max number of categories to show, the title, display icon, and t
 = How can I contribute? =
 Feel free to submit an issue or a pull-request on [GitHub](https://github.com/twodayslate/Recent-Categories-Widget).
 
-= What is the best way to contac you? =
+= What is the best way to contact you? =
 Check out [my website](http://zac.gorak.us) for a list of ways to do just that!
 
 == Screenshots ==
@@ -61,6 +61,10 @@ Check out [my website](http://zac.gorak.us) for a list of ways to do just that!
 * Rewrite
 * Added post count option
 
+= 1.3 =
+* Added before_title and after_title support
+* Bug fixes
+
 == Upgrade Notice == 
 
 = 1.0 =
@@ -71,3 +75,6 @@ If you want icon support it is recommended that you upgrade.
 
 = 1.2 =
 Rewrite to add post count option
+
+= 1.3 = 
+n/a
