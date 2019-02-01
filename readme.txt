@@ -8,7 +8,7 @@ Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Show your site's most recent categories!
+Show your site's most recently used categories!
 
 == Description ==
 

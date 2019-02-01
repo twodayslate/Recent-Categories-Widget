@@ -2,7 +2,7 @@
 /* 
 Plugin Name: Recent Categories
 Plugin URI: http://zac.gorak.us
-Description: Recent Categories
+Description: Recently Used Categories
 Author: @twodayslate
 Version: 1.3
 Author URI: http://zac.gorak.us
